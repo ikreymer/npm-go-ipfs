@@ -244,7 +244,7 @@ async function link ({ depBin, version }) {
  */
 module.exports = async (version, platform, arch, installPath, noLink = false) => {
   const args = cleanArguments(version, platform, arch, installPath)
-  const depBin = download(args)
+  const depBin = await download(args)
 
   if (noLink) {
     return depBin;
